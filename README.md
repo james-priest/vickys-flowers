@@ -1,16 +1,19 @@
 # Vicky's Flowers
 
-This is a single-page website administered by [Stamps.com](Stamps.com) as part of a take-home test. It has some of the following features:
+This is a single-page website administered by [Stamps.com](Stamps.com) as part of a take-home test.
+
+![screenshot](docs/screenshot.jpg)
+
+It has some of the following features:
 
 - Mobile-ready, fully-responsive design
 - Accessibility tested and ARIA-compliant for use with screen readers and other assistive technology
 - Use of [Parcel.js](Parcel.js) for a simplified build environment
 
-![screenshot](docs/screenshot.jpg)
 
 ## Installation
 
-Use npm or yarn to install dependencies.
+Use yarn or npm to install dependencies.
 
 ```sh
 yarn
