@@ -13,6 +13,8 @@ Code comments are encouraged for the JavaScript and structure of the HTML and CS
 
 Please include any task runner files that may be used to automate the build process.
 
+![screenshot](screenshot.jpg)
+
 ## HTML/CSS
 
 You should have received an invitation to the Zeplin project at james-priest@outlook.com
