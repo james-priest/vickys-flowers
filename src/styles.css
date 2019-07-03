@@ -1,0 +1,213 @@
+/* ********************
+ * Variables
+ * ******************** */
+:root {
+  --white: #ffffff;
+  --steel-blue: #28425a;
+  --pinkish-grey: #bdbdbd;
+  --brownish-grey: #4a4a4a;
+  --hot-pink: #d33169;
+  --yellow: #fbd62f;
+}
+
+/* ********************
+ * Global
+ * ******************** */
+*, html, body {
+  box-sizing: border-box;
+}
+html {
+  /* set fixed base size and use relative em after */ 
+  font-size: 16px;
+}
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 1.0625em; /* 17px/16px */
+  overflow: hidden;
+}
+h2 {
+  font-size: 1.764706em; /* 30px/17px */
+  margin: 1.2em 0 0 0;
+}
+p {
+  margin: 0.8em 0;
+}
+a {
+  color: var(--white);
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: var(--yellow);
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.all-caps {
+  text-transform: uppercase;
+}
+
+/* ********************
+ * Layout
+ * ******************** */
+.grid-layout {
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 56px 1fr 259px;
+  grid-column-gap: 30px;
+  grid-row-gap: 0px; 
+  height: 100vh;
+}
+main {
+  background-color: var(--pinkish-grey);
+  color: var(--brownish-grey);
+  /* display: flex; */
+  /* padding-top: 1em; */
+}
+header, footer {
+  display: flex;
+  background-color: var(--steel-blue);
+  color: var(--white);
+}
+.max-width-container {
+  /* max-width: 1200px; */
+  padding: 0 15px;
+  width: 100%;
+  margin: auto;
+  /* border: 1px solid darkred; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ********************
+ * Header
+ * ******************** */
+ 
+.main-header h1 {
+  /* h1 kept in page flow for SEO & ARIA-compliance */
+  /* position: absolute;
+  top: -9999px;
+  left: -99999px; */
+  font-size: 0px;
+  margin-right: 7px;
+}
+.main-header h1 a img {
+  transition: transform 0.1s;
+}
+.main-header h1 a img:hover {
+  transform: rotate(-3deg); /* add slight interactivity */
+}
+.top-level-nav {
+  display: flex;
+  align-items: center;
+  font-size: 0.941176em; /* 17px/16px */
+  height: 56px; /* center vertical */
+}
+.top-level-nav ul {
+  display: flex;
+  align-items: center; /* center vertical */
+}
+.top-level-nav ul li {
+  text-align: center; /* center vertical */
+}
+.top-level-nav li a {
+  display: block;
+  padding: 20px;
+  /* transition: transform 0.2s; */
+  transition: background-color 0.1s;
+}
+.top-level-nav li a:hover {
+  background-color: #4d5963;
+  color: white;
+  /* color: green; */
+  /* transform: scale(1.05); */
+}
+.cart-container {
+  display: flex;
+  align-items: center;
+}
+.cart-container div {
+  margin-left: 10px;
+}
+.cart {
+  width: 36px;
+  height: 32px;
+  /* border: 1px solid gray; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('images/cart.svg');
+  background-position-x: 1px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: var(--steel-blue);
+  padding-bottom: 4px;
+  padding-left: 6px;
+}
+
+/* ********************
+ * Content
+ * ******************** */
+.content-container {
+  /* display: flex; */
+  /* flex-direction: column; */
+  display: block;
+  /* border: 1px solid yellow; */
+  /* align-items: flex-start; */
+  /* justify-content: flex-start; */
+}
+.page-title {
+  color: var(--hot-pink);
+}
+.product-container {
+  display: flex;
+  border: 1px solid pink;
+  justify-content: space-between;
+}
+
+
+/* ******************** */
+/*  Footer */
+/* ******************** */
+#nav-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around
+}
+footer nav header {
+  color: var(--hot-pink);
+}
+.center-justify {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.823529em; /* 31px/17px */
+}
+.center-justify>header {
+  font-size: 0.941176em; /* 16px/17px */
+  font-weight: 800;
+}
+.footer-nav-group li {
+  font-size: 0.823529em; /* 14px/17px */
+  font-weight: 400;
+  /* line-height: 2.21; */
+}
+
+/* ********************
+ * Test
+ * ******************** */
+.test1 {
+  user-select: none;
+}
+
+/* ********************
+ * Media Queries
+ * ******************** */
+@media screen and (min-width: 1200px) {
+  .max-width-container { 
+    width: 1200px;
+  }
+}
