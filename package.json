@@ -1,0 +1,36 @@
+{
+  "name": "vickys-flowers",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": "https://github.com/james-priest/vickys-flowers.git",
+  "author": "James Priest <james-priest@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html --public-url ./"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "autoprefixer": "^9.6.0",
+    "babel-preset-env": "^1.7.0",
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-imagemin": "^3.0.0",
+    "postcss-normalize": "^8.0.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "not dead"
+  ],
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "grid": true
+      }
+    }
+  }
+}
