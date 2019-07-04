@@ -1,3 +1,12 @@
+/* CODE NOTES
+ * Relative sizing (em) is used throughout for proper scaling at
+ *  different resolutions.
+ * Some odd em or px numbers are used to get pixel perfect layout
+ *  at scale but these transition nicely to smaller viewports.
+ * Multiple media queries were used to ensure elements scale well
+ *  and to ensure an adaptive layout.
+*/
+
 /* ********************
  * Variables
  * ******************** */
@@ -23,12 +32,13 @@ html {
 body {
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
-  font-size: 1.0625em; /* 17px/16px */
-  overflow: hidden;
+  font-size: 1.0625em; /* 17px/16px for 17px font */
+  background-color: var(--pinkish-grey);
 }
 h2 {
-  font-size: 1.764706em; /* 30px/17px */
-  margin: 1.2em 0 0 0;
+  font-size: 1.764706em; /* 30px/17px for 30px font*/
+  /* margin: 1.2em 0 0 0; */
+  margin: 0
 }
 p {
   margin: 0.8em 0;
@@ -45,6 +55,9 @@ ul {
   margin: 0;
   padding: 0;
 }
+figure {
+  margin: 0;
+}
 .all-caps {
   text-transform: uppercase;
 }
@@ -56,9 +69,10 @@ ul {
   display: grid; 
   grid-template-columns: 1fr; 
   grid-template-rows: 56px 1fr 259px;
-  grid-column-gap: 30px;
-  grid-row-gap: 0px; 
+  /* grid-column-gap: 30px; */
+  grid-row-gap: 2.2em; 
   height: 100vh;
+  /* padding: 1em; */
 }
 main {
   background-color: var(--pinkish-grey);
@@ -129,8 +143,11 @@ header, footer {
   display: flex;
   align-items: center;
 }
-.cart-container div {
-  margin-left: 10px;
+.cart-container div:first-child {
+  text-align: right;
+}
+.cart-container div:not(:first-child) {
+  margin-left: 1em;
 }
 .cart {
   width: 36px;
@@ -139,7 +156,7 @@ header, footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('images/cart.svg');
+  background-image: url('img/cart.svg');
   background-position-x: 1px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -152,22 +169,60 @@ header, footer {
  * Content
  * ******************** */
 .content-container {
-  /* display: flex; */
-  /* flex-direction: column; */
-  display: block;
+  display: flex;
+  flex-direction: column;
+  /* display: block; */
   /* border: 1px solid yellow; */
-  /* align-items: flex-start; */
-  /* justify-content: flex-start; */
+  align-items: stretch;
+  justify-content: flex-start;
+  height: 100%;
 }
 .page-title {
   color: var(--hot-pink);
 }
-.product-container {
+.products-wrapper {
   display: flex;
-  border: 1px solid pink;
+  /* flex-wrap: wrap; */
+  /* border: 1px solid pink; */
   justify-content: space-between;
 }
-
+.product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid yellow; */
+  /* margin-bottom: 2em; */
+  /* margin-bottom: 38px; */
+  /* margin: 38px 0; */
+  margin-top: 38px;
+}
+.product-container:not(:first-child) {
+  margin-left: 1em; /* provide space between products */
+}
+.product-image {
+  /* width: 263px;
+  height: 263px; */
+  max-width: 100%;
+  object-fit: contain;
+  margin-bottom: 36px;
+  /* border-radius: 50%; */
+}
+.product-label {
+  margin-bottom: 4px;
+}
+.price {
+  color: var(--hot-pink);
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.product-select {
+  font-size: 1.176470em; /* 17px/20px */
+  border: 1px #333 solid;
+  width: 60px;
+}
+/* .product-select option {
+  padding: 4px;
+} */
 
 /* ******************** */
 /*  Footer */
@@ -175,7 +230,11 @@ header, footer {
 #nav-footer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around
+  justify-content: space-around;
+  margin: 1em auto;
+}
+#nav-footer > div {
+  margin: 1em;
 }
 footer nav header {
   color: var(--hot-pink);
@@ -210,4 +269,49 @@ footer nav header {
   .max-width-container { 
     width: 1200px;
   }
+}
+@media screen and (max-width: 800px) {
+  .max-width-container {
+    justify-content: flex-end;
+  }
+  .top-level-nav {
+    display: none;
+  }
+  .products-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .product-container {
+    /* margin-left: 20px;
+    margin-right: 20px; */
+    /* margin: 2.234294em 1em; */
+  }
+}
+@media screen and (max-width: 768px) {
+  /* .top-level-nav {
+    display: none;
+  } */
+  /* .products-wrapper {
+    justify-content: center;
+  }
+  .product-container {
+    margin-left: 20px;
+    margin-right: 20px;
+  } */
+}
+@media screen and (max-width: 620px) {
+  .grid-layout {
+    /* display: grid;  */
+    /* grid-template-columns: 1fr;  */
+    grid-template-rows: 56px 1fr 1fr;
+    /* grid-column-gap: 30px; */
+    /* grid-row-gap: 0px;  */
+    /* height: 100vh; */
+  }
+}
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 14px;
+  }
+
 }
