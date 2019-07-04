@@ -6,8 +6,9 @@
   "author": "James Priest <james-priest@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel index.html --open",
-    "build": "parcel build index.html --public-url ./"
+    "clean": "rm dist/*",
+    "dev": "parcel src/index.html --open",
+    "build": "parcel build src/index.html --public-url ./"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -15,6 +16,7 @@
     "autoprefixer": "^9.6.0",
     "babel-preset-env": "^1.7.0",
     "parcel-bundler": "^1.12.3",
+    "parcel-plugin-clean-dist": "0.0.6",
     "parcel-plugin-imagemin": "^3.0.0",
     "postcss-normalize": "^8.0.1"
   },
