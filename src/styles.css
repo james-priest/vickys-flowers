@@ -33,7 +33,7 @@ body {
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
   font-size: 1.0625em; /* 17px/16px for 17px font */
-  background-color: var(--pinkish-grey);
+  /* background-color: var(--pinkish-grey); */
 }
 h2 {
   font-size: 1.764706em; /* 30px/17px for 30px font*/
@@ -47,7 +47,7 @@ a {
   color: var(--white);
   text-decoration: none;
 }
-a:hover, a:focus {
+a:hover, a:focus, a:active {
   color: var(--yellow);
 }
 ul {
@@ -70,7 +70,7 @@ figure {
   grid-template-columns: 1fr; 
   grid-template-rows: 56px 1fr 259px;
   /* grid-column-gap: 30px; */
-  grid-row-gap: 2.2em; 
+  /* grid-row-gap: 2.2em;  */
   height: 100vh;
   /* padding: 1em; */
 }
@@ -119,8 +119,8 @@ header, footer {
 }
 @keyframes swing {
   0% { transform: rotate(0deg); }
-  50% { transform: rotate(2deg); }
-  100% { transform: rotate(-2deg); }
+  50% { transform: rotate(-3deg); }
+  100% { transform: rotate(2deg); }
 }
 
 .top-level-nav {
@@ -144,9 +144,9 @@ header, footer {
 }
 .top-level-nav li a:hover {
   background-color: #4d5963;
-  color: white;
+  color: var(--white);
   /* color: green; */
-  /* transform: scale(1.05); */
+  /* transform: scale(1.03); */
 }
 .cart-container {
   display: flex;
@@ -185,6 +185,8 @@ header, footer {
   align-items: stretch;
   justify-content: flex-start;
   height: 100%;
+  margin: 2.2em 0;
+  z-index: 1;
 }
 .page-title {
   color: var(--hot-pink);
