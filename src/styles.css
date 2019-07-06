@@ -108,11 +108,11 @@ header, footer {
   font-size: 0px;
   margin-right: 7px;
 }
-.main-header h1 a img {
+.main-header h1 img {
   /* transition: transform 0.1s; */
 
 }
-.main-header h1 a img:hover {
+.main-header h1 img:hover {
   /* add slight interactivity */
   /* transform: rotate(-3deg); */
   animation: .2s ease-out 0s 1 alternate swing;
@@ -138,7 +138,7 @@ header, footer {
 }
 .top-level-nav li a {
   display: block;
-  padding: 20px;
+  padding: 19px 16px;
   /* transition: transform 0.2s; */
   transition: background-color 0.1s;
 }
@@ -185,7 +185,7 @@ header, footer {
   align-items: stretch;
   justify-content: flex-start;
   height: 100%;
-  margin: 2.2em 0;
+  margin: 2.2em auto;
   z-index: 1;
 }
 .page-title {
