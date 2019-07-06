@@ -8,17 +8,25 @@
   <title>Vicky's Flowers</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800&display=swap" rel="stylesheet">
 </head>
-<body class="grid-layout">
-  <header role="banner" class="main-header">
+<body>
+  <header role="banner" class="fixed-header">
     <div class="max-width-container">
       <nav class="top-level-nav">
-        <h1><img src="img/logo.svg" alt="Vicky's Flowers" />Vicky's Flowers</h1>
-
         <ul class="all-caps">
-          <li><a href="#">home</a></li>
-          <li><a href="#">about us</a></li>
-          <li><a href="#">occasions</a></li>
-          <li><a href="#">order</a></li>
+          <li class="menu-icon">
+            <a href="#">
+              <svg viewBox="0 4 24 14">
+                <path fill="#fff" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+              </svg>        
+            </a>
+          </li>
+          <li class="logo">
+            <h1><img src="img/logo.svg" alt="Vicky's Flowers" />Vicky's Flower</h1>
+          </li>
+          <li class="menu-item"><a href="#">home</a></li>
+          <li class="menu-item"><a href="#">about us</a></li>
+          <li class="menu-item"><a href="#">occasions</a></li>
+          <li class="menu-item"><a href="#">order</a></li>
         </ul>
 
       </nav>
@@ -30,8 +38,8 @@
       </div>
     </div>
   </header>
-  <main role="main">
-    <div class="max-width-container content-container">
+  <div class="scroll-container">
+    <main role="main" class="max-width-container content-container">
 
       <div class="page-summary">
         <h2 class="page-title">Top Products</h2>
@@ -126,40 +134,39 @@
           </select>
         </div>
       </div>
-    </div>
-  </main>
-  <footer id="footer" role="navigation">
-    <nav id="nav-footer" class="max-width-container">
-      <div class="center-justify">
-        <header class="all-caps">get to know us</header>
-        <ul class="center-justify footer-nav-group">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Media</a></li>
-          <li><a href="#">Security &amp; Privacy</a></li>
-        </ul>
-      </div>
-      <div class="center-justify">
-        <header class="all-caps">learn more about</header>
-        <ul class="center-justify footer-nav-group">
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Find a Florist</a></li>
-          <li><a href="#">Floral Tips &amp; Inspiration</a></li>
-          <li><a href="#">Sitemap</a></li>
-        </ul>
-      </div>
-      <div class="center-justify">
-        <header class="all-caps">shop vicky's</header>
-        <ul class="center-justify footer-nav-group">
-          <li><a href="#">Same-Day Flower Delivery</a></li>
-          <li><a href="#">Birthday Flowers</a></li>
-          <li><a href="#">Funeral &amp; Sympathy Flowers</a></li>
-          <li><a href="#">International Flower Delivery</a></li>
-        </ul>
-      </div>
-    </nav>
-  </footer>
-  
+    </main>
+    <footer id="footer" role="navigation">
+      <nav id="nav-footer" class="max-width-container">
+        <div class="center-justify">
+          <header class="all-caps">get to know us</header>
+          <ul class="center-justify footer-nav-group">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Media</a></li>
+            <li><a href="#">Security &amp; Privacy</a></li>
+          </ul>
+        </div>
+        <div class="center-justify">
+          <header class="all-caps">learn more about</header>
+          <ul class="center-justify footer-nav-group">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Find a Florist</a></li>
+            <li><a href="#">Floral Tips &amp; Inspiration</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+        <div class="center-justify">
+          <header class="all-caps">shop vicky's</header>
+          <ul class="center-justify footer-nav-group">
+            <li><a href="#">Same-Day Flower Delivery</a></li>
+            <li><a href="#">Birthday Flowers</a></li>
+            <li><a href="#">Funeral &amp; Sympathy Flowers</a></li>
+            <li><a href="#">International Flower Delivery</a></li>
+          </ul>
+        </div>
+      </nav>
+    </footer>
+  </div>
   <script src="index.js"></script>
 </body>
 </html>
