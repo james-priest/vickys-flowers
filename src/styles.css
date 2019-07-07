@@ -64,9 +64,10 @@ figure {
 }
 .a11y {
   /* Hidden but kept in page flow for a11y & ARIA-compliance */
-  position: absolute;
-  left: -9999px;
-  overflow: hidden;
+  /* position: absolute; */
+  /* left: -9999px; */
+  /* overflow: hidden; */
+  font-size: 0;
 }
 
 /* ********************
