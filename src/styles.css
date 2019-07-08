@@ -305,7 +305,7 @@ footer nav header {
   }
   .products-wrapper {
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
   .product-container:not(:first-child) {
     margin-left: 0;
@@ -315,7 +315,7 @@ footer nav header {
   }
 
   .top-level-nav ul {
-    margin-top: 56px;
+    padding-top: 56px;
   }
   .top-level-nav li.menu-item, .top-level-nav li.logo {
     visibility: hidden;
@@ -347,7 +347,7 @@ footer nav header {
   }
   .responsive .scroll-container {
     margin-top: 282px;
-    height: calc(100vh - 282px);
+    min-height: calc(100vh - 282px);
     transition: height 0.3s, margin 0.3s;
   }
   .responsive nav.top-level-nav {
