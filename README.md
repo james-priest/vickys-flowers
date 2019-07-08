@@ -8,7 +8,7 @@ The completed project has the following features:
 
 - Mobile-ready, fully-responsive design.
 - Accessibility tested and ARIA-compliant for use with screen readers and other assistive technology.
-- Use of [Parcel.js](Parcel.js) for simplified build environment, image compression, minification, autoprefixer, & bundling.
+- Use of [Parcel.js](Parcel.js) (web application bundler) for robust build environment, image compression, minification, postcss, autoprefixer, polyfills, & bundling.
 
 Assignment instructions can be found here:
 
@@ -86,6 +86,12 @@ The site was tested with [Lighthouse](https://developers.google.com/web/tools/li
 ![Audit](docs/audit1.jpg)
 
 Best practices shows an 86 due to assets being served using HTTP/1 protocol which is what my local dev server uses. This will jump to the 95% range once HTTP/2 is used from a production web server.
+
+## Testing
+
+This webpage was successfully tested on Firefox, IE, Edge, & Chrome.
+
+Safari was not available to test with but transpiling and polyfill settings were configured to target the last two versions of every browser in use with more than 2% market share.
 
 ## Screenshots
 
