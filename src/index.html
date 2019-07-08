@@ -33,11 +33,11 @@
         </ul>
 
       </nav>
-      <div class="cart-container all-caps">
+      <div class="cart-container all-caps" id="cart">
         <div>total amount:</div>
-        <div class="total">$35.00</div>
+        <div class="total">$<span id="cart-total">0.00</span></div>
         <div> | </div>
-        <div class="cart">1</div>
+        <div class="cart-image" id="cart-qty">0</div>
       </div>
     </div>
   </header>
@@ -55,21 +55,34 @@
             srcset="img/flower-1@2x.png 2x,
                     img/flower-1@3x.png 3x"
             class="product-image"
-            alt="Sunflower Melody Flower Arrangement">
+            alt="Sunflower Melody Flower Arrangement"
+            draggable="true"
+            data-quantity-id="product1"
+            data-product-cost="30">
           <figcaption class="product-label">Sunflower Melody</figcaption>
           <div class="price" aria-label="cost">$30.00</div>
           <label for="product1" class="a11y">Quantity</label>
           <select id="product1" class="product-select" aria-label="quantity">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
           </select>
         </figure>
         <figure class="product-container">
@@ -77,21 +90,34 @@
             srcset="img/flower-2@2x.png 2x,
                     img/flower-2@3x.png 3x"
             class="product-image"
-            alt="Spring Mix Flower Arrangement">
+            alt="Spring Mix Flower Arrangement"
+            draggable="true"
+            data-quantity-id="product2"
+            data-product-cost="35">
           <figcaption class="product-label">Spring Mix</figcaption>
           <div class="price" aria-label="cost">$35.00</div>
           <label for="product2" class="a11y">Quantity</label>
           <select id="product2" class="product-select" aria-label="quantity">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
           </select>
         </figure>
         <figure class="product-container">
@@ -99,21 +125,34 @@
             srcset="img/flower-3@2x.png 2x,
                     img/flower-3@3x.png 3x"
             class="product-image"
-            alt="Colorful Arrangement Flowers">
+            alt="Colorful Arrangement Flowers"
+            draggable="true"
+            data-quantity-id="product3"
+            data-product-cost="40">
           <figcaption class="product-label">Colorful Arrangement</figcaption>
           <div class="price" aria-label="cost">$40.00</div>
           <label for="product3" class="a11y">Quantity</label>
           <select id="product3" class="product-select" aria-label="quantity">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
           </select>
         </figure>
         <figure class="product-container">
@@ -121,21 +160,34 @@
             srcset="img/flower-4@2x.png 2x,
                     img/flower-4@3x.png 3x"
             class="product-image"
-            alt="Tulip Season Flower Arrangement">
+            alt="Tulip Season Flower Arrangement"
+            draggable
+            data-quantity-id="product4"
+            data-product-cost="50">
           <figcaption class="product-label">Tulip Season</figcaption>
           <div class="price" aria-label="cost">$50.00</div>
           <label for="product4" class="a11y">Quantity</label>
           <select id="product4" class="product-select" aria-label="quantity">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
           </select>
         </figure>
       </div>
