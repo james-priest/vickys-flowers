@@ -3,12 +3,14 @@ import './styles.css';
 import '@babel/polyfill';
 
 /* CODE NOTES for Vicky's Flowers
- * Responsive menu uses a toggle function to apply or remove a class
- *  that triggers css to display or hide the nav. 
- * jQuery simplifies drag and drop but since HTML5 introduced this as 
- *  part of the standard, vanilla JS & DOM is used to reduce footprint.
+ * Responsive menu button toggles a css class that triggers the 
+ *  display or hiding of the responsive nav menu. 
+ * Although jQuery simplifies drag and drop and ensures cross-browser support, 
+ *  HTML5 introduced this feature as part of the standard, so vanilla JS & DOM
+ *  is used to reduce the footprint while still targeting older browsers.
  * The drop zone is defined as the entire cart container for better
  *  usability.
+ * Babel polyfill is used for ES2015/ES2017 syntax not supported by IE.
  */ 
 
 const toggleResponsiveNav = e => {
@@ -43,7 +45,7 @@ const dragEnd = e => {
 const drop = e => {
   e.preventDefault();
   const productData = e.dataTransfer.getData('text');
-  console.log('productData', JSON.parse(productData));
+  
   updateCart(JSON.parse(productData));
   setProductQuantities();
 };
@@ -61,9 +63,6 @@ const updateCart = ({ cost, quantity }) => {
   const cartTotalNode = document.getElementById('cart-total');
   const cartQtyNode = document.getElementById('cart-qty');
 
-  console.log('cost', cost);
-  console.log('quantity', quantity);
-  console.log('cartTotalNode.innerText', cartTotalNode.innerText);
   cartTotalNode.innerText = (Number(cartTotalNode.innerText) + (cost * quantity)).toFixed(2);
   cartQtyNode.innerText = Number(cartQtyNode.innerText) + Number(quantity);
 };
@@ -81,8 +80,6 @@ const init = () => {
     // product.addEventListener('dragend', dragEnd);
   });
   
-
-
   dropZone.addEventListener('dragenter', allowDrop);
   dropZone.addEventListener('dragover', allowDrop);
   dropZone.addEventListener('drop', drop);
