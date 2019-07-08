@@ -1,13 +1,17 @@
-/* CODE NOTES
- * Styles created by hand to provide the smallest possible footprint.
+/* CODE NOTES for Vicky's Flowers
+ * Responsive layout was defined with Flexbox and media queries. This 
+ *  results in a smaller footprint and eliminates the need for an external
+ *  library. Grid was used but then dropped to accommodate IE 11.
  * Alternative CSS Frameworks that could have been used include Bootstrap, 
  *  Semantic UI, and Bulma.
+ * Cross-browser compatibility is achieved with PostCSS, Autoprefixer, and
+ *  Browserlist definition within Package.json.
  * Relative sizing (em) is used throughout for proper scaling at
  *  different resolutions.
- * Subtle CSS Animation is used to enhance interactivity, convey 
- *  affordance, and smooth out responsive menu transitions.
- * Media queries were used to for adaptive/responsive layout and to 
- *  ensure the site scales well & is readable on any device.
+ * Subtle CSS Animation is used to enhance interactivity, convey affordance,
+ *  and smooth out responsive menu transitions.
+ * Media queries were used to ensure the site scales well and is readable
+ *  on any device.
 */
 
 /* ********************
@@ -19,7 +23,8 @@
   --pinkish-grey: #bdbdbd;
   --brownish-grey: #4a4a4a;
   --hot-pink: #d33169;
-  --yellow: #fbd62f;
+  /* --yellow: #fbd62f; */
+  --yellow: #ffe77c;
 }
 
 /* ********************
@@ -69,6 +74,20 @@ figure {
   /* overflow: hidden; */
   font-size: 0;
 }
+.product-image.dragging {
+  /* background-color: var(--yellow); */
+  /* border: 10px solid var(--yellow); */
+  filter: drop-shadow(0 0 20px rgb(212, 196, 52));
+}
+#cart.dropzone {
+  box-shadow: 0 0 20px rgb(212, 196, 52);
+  border: 1px solid #a0850a;
+  border-radius: 10px;
+  padding-right: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  transition: border 0.15s, box-shadow 0.1s;
+}
 
 /* ********************
  * Layout
@@ -82,11 +101,14 @@ figure {
   transition: height 0.3s
 }
 .scroll-container {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr; 
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr auto; */
+  display: flex; /* IE 10 & 11 adjustment */
+  flex-direction: column;
+
   margin-top: 56px;
-  height: calc(100vh - 56px);
+  min-height: calc(100vh - 56px);
   background-color: var(--pinkish-grey);
   transition: height 0.3s, margin 0.3s;
 }
@@ -112,7 +134,7 @@ header, footer {
 /* ********************
  * Header
  * ******************** */
-.top-level-nav, .cart-container {
+.top-level-nav {
   display: flex;
   align-items: center;
   font-size: 0.941176em; /* 16px/17px for 16px font */
@@ -162,6 +184,16 @@ header, footer {
   100% { transform: rotate(2deg); }
 }
 
+.cart-container {
+  display: flex;
+  align-items: center;
+  font-size: 0.941176em; /* 16px/17px for 16px font */
+  font-weight: 500; /* visually closest */
+  padding: 8px 12px;
+  margin: 4px 3px;
+  border-radius: 10px;
+  border: 1px solid var(--steel-blue);
+}
 .cart-container div:first-child {
   text-align: right;
 }
@@ -169,7 +201,7 @@ header, footer {
   /* margin-left: 1em; /* cleanest spacing */
   margin-left: 0.4em; /* pixel-perfect at 16px */
 }
-.cart {
+.cart-image {
   width: 36px;
   height: 32px;
   display: flex;
@@ -188,6 +220,8 @@ header, footer {
  * Main
  * ******************** */
 .content-container {
+  flex-grow: 1;
+  min-height: calc(100vh - 56px - 262px - 76px);
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -200,7 +234,8 @@ header, footer {
 }
 .products-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  -ms-flex-wrap: wrap;
 }
 .product-container {
   display: flex;
@@ -221,6 +256,7 @@ header, footer {
 .product-image:hover {
   transform: scale(1.006);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* filter: drop-shadow(0 0 8px #666); */
 }
 .product-label {
   margin-bottom: 4px;
@@ -234,6 +270,8 @@ header, footer {
   font-size: 1.176470em; /* 20px/17px for 20px font */
   border: 1px #333 solid;
   width: 60px;
+  width: 3em;
+  padding-left: 0.5em;
 }
 
 /* ********************
@@ -293,7 +331,7 @@ footer nav header {
   }
   .products-wrapper {
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
   .product-container:not(:first-child) {
     margin-left: 0;
@@ -303,7 +341,7 @@ footer nav header {
   }
 
   .top-level-nav ul {
-    margin-top: 56px;
+    padding-top: 56px;
   }
   .top-level-nav li.menu-item, .top-level-nav li.logo {
     visibility: hidden;
@@ -325,7 +363,8 @@ footer nav header {
   .cart-container {
     position: absolute;
     top: 0;
-    right: 15px;
+    /* right: 15px; */
+    right: 0;
   }
 
   /* Styles for expanded responsive nav menu */
@@ -335,7 +374,7 @@ footer nav header {
   }
   .responsive .scroll-container {
     margin-top: 282px;
-    height: calc(100vh - 282px);
+    min-height: calc(100vh - 282px);
     transition: height 0.3s, margin 0.3s;
   }
   .responsive nav.top-level-nav {
@@ -369,7 +408,7 @@ footer nav header {
     transition: opacity 0.6s;
   }
   .responsive .top-level-nav li.menu-item a {
-    padding: 14px ;
+    padding: 14px;
     width: 100%;
   }
   .responsive .top-level-nav li.menu-item a:hover {
