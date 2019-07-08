@@ -5,7 +5,7 @@ import '@babel/polyfill';
 /* CODE NOTES for Vicky's Flowers
  * Responsive menu button toggles a css class that triggers the 
  *  display or hiding of the responsive nav menu. 
- * Although jQuery simplifies drag and drop and ensures cross-browser support, 
+ * Although jQuery simplifies drag and drop and offers cross-browser support, 
  *  HTML5 introduced this feature as part of the standard, so vanilla JS & DOM
  *  is used to reduce the footprint while still targeting older browsers.
  * The drop zone is defined as the entire cart container for better
@@ -13,6 +13,7 @@ import '@babel/polyfill';
  * Babel polyfill is used for ES2015/ES2017 syntax not supported by IE.
  */ 
 
+// Responsive Nav toggle
 const toggleResponsiveNav = e => {
   e.preventDefault();
   const body = document.querySelector('body');
@@ -23,11 +24,10 @@ const toggleResponsiveNav = e => {
   }
 };
 
-const allowDrop = e => {
-  e.preventDefault();
-};
-
+// Drag and drop methods
 const dragStart = e => {
+  document.getElementById('cart').classList.add('dropzone');
+  e.target.classList.add('dragging');
   const cost = e.target.getAttribute('data-product-cost');
   const quantityId = e.target.getAttribute('data-quantity-id');
   const quantity = document.getElementById(quantityId).value;
@@ -37,11 +37,10 @@ const dragStart = e => {
   };
   e.dataTransfer.setData('text', JSON.stringify(productData));
 };
-
 const dragEnd = e => {
-  console.log('dragEnd');
+  document.getElementById('cart').classList.remove('dropzone');
+  e.target.classList.remove('dragging');
 };
-
 const drop = e => {
   e.preventDefault();
   const productData = e.dataTransfer.getData('text');
@@ -49,7 +48,12 @@ const drop = e => {
   updateCart(JSON.parse(productData));
   setProductQuantities();
 };
+const allowDrop = e => {
+  e.preventDefault();
+};
 
+
+// Randomize product quantities
 const setProductQuantities = () => {
   const quantityControls = [...document.querySelectorAll('.product-select')];
 
@@ -59,6 +63,7 @@ const setProductQuantities = () => {
   });
 };
 
+// Update Cart - Total and Quantity
 const updateCart = ({ cost, quantity }) => {
   const cartTotalNode = document.getElementById('cart-total');
   const cartQtyNode = document.getElementById('cart-qty');
@@ -67,8 +72,8 @@ const updateCart = ({ cost, quantity }) => {
   cartQtyNode.innerText = Number(cartQtyNode.innerText) + Number(quantity);
 };
 
+// Add Event Listeners
 const init = () => {
-  // Add Event Listeners
   const menuIcon = document.querySelector('.menu-icon a');
   menuIcon.addEventListener('click', toggleResponsiveNav);
   
@@ -77,7 +82,7 @@ const init = () => {
 
   products.forEach(product => {
     product.addEventListener('dragstart', dragStart);
-    // product.addEventListener('dragend', dragEnd);
+    product.addEventListener('dragend', dragEnd);
   });
   
   dropZone.addEventListener('dragenter', allowDrop);
