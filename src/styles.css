@@ -5,7 +5,7 @@
  * Alternative CSS Frameworks that could have been used include Bootstrap, 
  *  Semantic UI, and Bulma.
  * Cross-browser compatibility is achieved with PostCSS, Autoprefixer, and
- *  a Browserlist definition within Package.json.
+ *  Browserlist definition within Package.json.
  * Relative sizing (em) is used throughout for proper scaling at
  *  different resolutions.
  * Subtle CSS Animation is used to enhance interactivity, convey affordance,
@@ -23,7 +23,8 @@
   --pinkish-grey: #bdbdbd;
   --brownish-grey: #4a4a4a;
   --hot-pink: #d33169;
-  --yellow: #fbd62f;
+  /* --yellow: #fbd62f; */
+  --yellow: #ffe77c;
 }
 
 /* ********************
@@ -73,6 +74,20 @@ figure {
   /* overflow: hidden; */
   font-size: 0;
 }
+.product-image.dragging {
+  /* background-color: var(--yellow); */
+  /* border: 10px solid var(--yellow); */
+  filter: drop-shadow(0 0 20px rgb(212, 196, 52));
+}
+#cart.dropzone {
+  box-shadow: 0 0 20px rgb(212, 196, 52);
+  border: 1px solid #a0850a;
+  border-radius: 10px;
+  padding-right: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  transition: border 0.15s, box-shadow 0.1s;
+}
 
 /* ********************
  * Layout
@@ -119,7 +134,7 @@ header, footer {
 /* ********************
  * Header
  * ******************** */
-.top-level-nav, .cart-container {
+.top-level-nav {
   display: flex;
   align-items: center;
   font-size: 0.941176em; /* 16px/17px for 16px font */
@@ -169,6 +184,16 @@ header, footer {
   100% { transform: rotate(2deg); }
 }
 
+.cart-container {
+  display: flex;
+  align-items: center;
+  font-size: 0.941176em; /* 16px/17px for 16px font */
+  font-weight: 500; /* visually closest */
+  padding: 8px 12px;
+  margin: 4px 3px;
+  border-radius: 10px;
+  border: 1px solid var(--steel-blue);
+}
 .cart-container div:first-child {
   text-align: right;
 }
@@ -231,6 +256,7 @@ header, footer {
 .product-image:hover {
   transform: scale(1.006);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* filter: drop-shadow(0 0 8px #666); */
 }
 .product-label {
   margin-bottom: 4px;
@@ -337,7 +363,8 @@ footer nav header {
   .cart-container {
     position: absolute;
     top: 0;
-    right: 15px;
+    /* right: 15px; */
+    right: 0;
   }
 
   /* Styles for expanded responsive nav menu */
@@ -381,7 +408,7 @@ footer nav header {
     transition: opacity 0.6s;
   }
   .responsive .top-level-nav li.menu-item a {
-    padding: 14px ;
+    padding: 14px;
     width: 100%;
   }
   .responsive .top-level-nav li.menu-item a:hover {
